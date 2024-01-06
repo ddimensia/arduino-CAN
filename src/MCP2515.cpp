@@ -1,8 +1,6 @@
 // Copyright (c) Sandeep Mistry. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-#ifndef ARDUINO_ARCH_ESP32
-
 #include "MCP2515.h"
 
 #define REG_BFPCTRL                0x0c
@@ -491,5 +489,3 @@ void MCP2515Class::onInterrupt()
 }
 
 MCP2515Class CAN;
-
-#endif
