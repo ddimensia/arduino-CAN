@@ -263,7 +263,9 @@ void MCP2515Class::onReceive(void(*callback)(int))
   pinMode(_intPin, INPUT);
 
   if (callback) {
+#ifndef ARDUINO_ARCH_ESP32
     SPI.usingInterrupt(digitalPinToInterrupt(_intPin));
+#endif
     attachInterrupt(digitalPinToInterrupt(_intPin), MCP2515Class::onInterrupt, LOW);
   } else {
     detachInterrupt(digitalPinToInterrupt(_intPin));
