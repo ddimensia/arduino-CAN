@@ -434,7 +434,7 @@ void MCP2515Class::reset()
     digitalWrite(_csPin, LOW);
   }
   SPI.transfer(0xc0);
-  if (_csPint != -1) {
+  if (_csPin != -1) {
     digitalWrite(_csPin, HIGH);
   }
   SPI.endTransaction();
